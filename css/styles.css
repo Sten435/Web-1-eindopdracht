@@ -1,24 +1,453 @@
 :root {
-  --main-color: #585858
-;
+  --main-color: #585858;
+  --main-green: #769476;
+  --green-hover: #668a678e;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #97979708;
-  background-color: #f1f1f1;
 }
 
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: var(--main-color);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
-path:hover {
-  fill: #ececec;
+main {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 89.5vh;
+  padding: 0 0 3.5rem 0;
+}
+
+.header-section .arrow-down {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--main-green);
+  margin-left: -25px;
+  -webkit-animation: arrow-down 2.6s ease infinite;
+          animation: arrow-down 2.6s ease infinite;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.header-section .arrow-down i {
+  font-size: 1.4rem;
+  color: whitesmoke;
+  padding: 0;
+  margin: 0;
+}
+
+.header-section .header-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 13rem;
+  height: 15rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 2px solid #3d3d3d3d;
+  position: relative;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.header-section .header-card .title-card-container {
+  padding: 0 1rem;
+  position: absolute;
+  top: -0.9rem;
+  left: 0;
+  width: 100%;
+}
+
+.header-section .header-card .title-card-container .title-container {
+  background-color: #ffffff;
+  border: 2px solid #3d3d3d3d;
+  width: 100%;
+  margin: 0;
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+}
+
+.header-section .header-card .title-card-container .title-container h2 {
+  font-size: 1rem;
+  margin: 0;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.header-section .header-card .header-card-item-bottom-border {
+  border-bottom: 2px solid #d1d1d1;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.header-section .header-card .header-card-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-section .header-card .header-card-item #besmettingen-aantal {
+  color: #e66666f5;
+}
+
+.header-section .header-card .header-card-item h3 {
+  font-weight: normal;
+}
+
+.header-section .header-card .header-card-item div {
+  border: 2px solid #3d3d3d3d;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  padding: 0.3rem;
+  margin: 0;
+  padding: 0 0.3rem;
+}
+
+.toegediende-section {
+  width: 100%;
+  background-color: var(--main-green);
+}
+
+.toegediende-section h2 {
+  text-align: center;
+  padding-top: 1.6rem;
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0px 1px 6px #4141414d;
+}
+
+.toegediende-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2.6rem 0 4rem 0;
+}
+
+.toegediende-container .toegediende-card {
+  width: 13rem;
+  border: 2px solid #3d3d3d3d;
+  background-color: #f4f6f5;
+  border-radius: 15px;
+}
+
+.toegediende-container .toegediende-card:hover {
+  cursor: help;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.toegediende-container .toegediende-card .toegediende-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 2px solid #3d3d3d3d;
+}
+
+.toegediende-container .toegediende-card .first-dose,
+.toegediende-container .toegediende-card .second-dose {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.8rem 0;
+}
+
+.toegediende-container .toegediende-card .first-dose h3,
+.toegediende-container .toegediende-card .second-dose h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.toegediende-container .toegediende-card .first-dose div,
+.toegediende-container .toegediende-card .second-dose div {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid #3d3d3d3d;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+  padding: 0.2rem 0.3rem;
+}
+
+.voorkomen-section {
+  width: 100%;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.voorkomen-section .voorkomen-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 2rem 0;
+}
+
+.voorkomen-section .voorkomen-container h2 {
+  margin: 0;
+}
+
+.voorkomen-section .voorkomen-container .video-container {
+  position: relative;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.voorkomen-section .voorkomen-container .video-container .video-off {
+  -webkit-filter: brightness(0.85);
+          filter: brightness(0.85);
+}
+
+.voorkomen-section .voorkomen-container .video-container video {
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 2rem;
+}
+
+.voorkomen-section .voorkomen-container .video-container video:hover {
+  cursor: pointer;
+}
+
+.voorkomen-section .voorkomen-container .video-container i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  padding-right: 0.1rem;
+  padding-top: 0.1rem;
+  border-radius: 25%;
+  background-color: whitesmoke;
+  color: var(--main-green);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-filter: drop-shadow(2px 2px 37px black);
+          filter: drop-shadow(2px 2px 37px black);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.voorkomen-section .voorkomen-container .video-container i:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+  border-radius: 50%;
+}
+
+.voorkomen-section .voorkomen-container .voorkomen-info {
+  width: 50%;
+}
+
+.voorkomen-section .voorkomen-container .voorkomen-info .vlaamse-overheid-text {
+  text-decoration: underline;
+  font-style: italic;
+  color: var(--main-green);
+}
+
+.voorkomen-section .voorkomen-container .voorkomen-info .fa-check {
+  color: var(--main-green);
+}
+
+.waar-gevaccineerd-section {
+  width: 100%;
+  background-color: var(--main-green);
+  padding: 2rem 0;
+}
+
+.waar-gevaccineerd-section .waar-gevaccineerd-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.waar-gevaccineerd-section .waar-gevaccineerd-container h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+  color: whitesmoke;
+  margin-bottom: 2rem;
+}
+
+.waar-gevaccineerd-section .waar-gevaccineerd-container button {
+  padding: 0 .4rem;
+  font-size: 1.2rem;
+  border-radius: .2rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-color: whitesmoke;
+  color: var(--main-green);
+  border: none;
+  outline: none;
+}
+
+.waar-gevaccineerd-section .waar-gevaccineerd-container button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.waar-gevaccineerd-section .waar-gevaccineerd-container button:active, .waar-gevaccineerd-section .waar-gevaccineerd-container button:focus {
+  border: none;
+  outline: none;
+}
+
+#toegediend {
+  height: 55px;
+  width: 100%;
+  visibility: hidden;
+}
+
+.background-filter {
+  background-color: #f5f5f5de;
+  width: 100%;
+  height: 100%;
+}
+
+.belgie_svg {
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+
+path {
+  fill: #f9fcfa;
+  stroke: #3d3d3d96;
+  stroke-width: 0.8px;
+  -webkit-transition: 0.1s all ease-in;
+  transition: 0.1s all ease-in;
+}
+
+svg {
+  -webkit-filter: drop-shadow(1px 1px 0px rgba(88, 88, 88, 0.548));
+          filter: drop-shadow(1px 1px 0px rgba(88, 88, 88, 0.548));
+}
+
+.path-hover {
+  fill: var(--green-hover);
 }
 
 ul {
@@ -39,7 +468,7 @@ header {
 }
 
 .clipper {
-  height: 55px;
+  height: 5rem;
   width: 100%;
 }
 
@@ -60,14 +489,14 @@ nav {
           align-items: center;
   width: 100%;
   height: 55px;
-  border: 1px solid rgba(0, 0, 0, 0.171);
+  border: 1px solid #0000002c;
   background-color: white;
   z-index: 5;
 }
 
 .logo {
   height: 40px;
-  margin: .5rem 0 0 2rem;
+  margin: 0.5rem 0 0 2rem;
 }
 
 .logo_footer {
@@ -75,7 +504,7 @@ nav {
 }
 
 .adres {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .home_banner {
@@ -94,8 +523,8 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: all ease-in-out .2s;
-  transition: all ease-in-out .2s;
+  -webkit-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
 }
 
 #menu a {
@@ -113,13 +542,13 @@ nav {
 }
 
 #menu a:hover {
-  background-color: #242424;
+  background-color: var(--main-green);
   color: white;
-  -webkit-box-shadow: 5px 10px 30px rgba(53, 53, 53, 0.03);
-          box-shadow: 5px 10px 30px rgba(53, 53, 53, 0.03);
+  -webkit-box-shadow: 5px 10px 30px #35353508;
+          box-shadow: 5px 10px 30px #35353508;
   border-radius: 3px;
-  -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.1s;
+  transition: all ease 0.1s;
 }
 
 .close {
@@ -163,7 +592,7 @@ nav {
 }
 
 .footer-container h3 {
-  font: normal 36px 'Cookie', cursive;
+  font: normal 36px "Cookie", cursive;
   margin: 0;
 }
 
@@ -185,7 +614,7 @@ nav {
 }
 
 .footer-container .footer-center i {
-  background-color: #74A175;
+  background-color: #74a175;
   font-size: 25px;
   width: 38px;
   height: 38px;
@@ -297,7 +726,7 @@ nav {
             box-shadow: 0 2px 18px -3px #56565685;
   }
   #menu a {
-    margin: .2rem 1rem;
+    margin: 0.2rem 1rem;
   }
   .close {
     display: initial;
@@ -316,8 +745,46 @@ nav {
   .logo_footer {
     margin-bottom: 1rem;
   }
-  .fa-map-marker, .fa-phone, .fa-envelope {
+  .fa-map-marker,
+  .fa-phone,
+  .fa-envelope {
     display: none;
+  }
+}
+
+@-webkit-keyframes arrow-down {
+  0% {
+    bottom: 1rem;
+  }
+  30% {
+    bottom: 2rem;
+  }
+  30% {
+    bottom: 2rem;
+  }
+  60% {
+    bottom: 1rem;
+  }
+  100% {
+    bottom: 1rem;
+  }
+}
+
+@keyframes arrow-down {
+  0% {
+    bottom: 1rem;
+  }
+  30% {
+    bottom: 2rem;
+  }
+  30% {
+    bottom: 2rem;
+  }
+  60% {
+    bottom: 1rem;
+  }
+  100% {
+    bottom: 1rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */
