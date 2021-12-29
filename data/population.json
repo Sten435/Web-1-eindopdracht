@@ -1,1 +1,13 @@
-[{"Antwerpen":99530,"Henegouwen":44489,"Limburg":56326,"Luik":71835,"Luxemburg":12549,"Namen":41443,"Oost-Vlaanderen":81195,"Vlaams-Brabant":42638,"Waals-Brabant":21940,"West-Vlaanderen":30377,"Brussel":51683}]
+[{
+    "Antwerpen": 99530,
+    "Henegouwen": 44489,
+    "Limburg": 56326,
+    "Luik": 71835,
+    "Luxemburg": 12549,
+    "Namen": 41443,
+    "Oost-Vlaanderen": 81195,
+    "Vlaams-Brabant": 42638,
+    "Waals-Brabant": 21940,
+    "West-Vlaanderen": 30377,
+    "Brussel": 51683
+}]

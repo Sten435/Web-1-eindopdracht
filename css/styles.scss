@@ -7,6 +7,7 @@
 body {
     margin: 0;
     padding: 0;
+    --animate-duration: .1s;
 }
 
 * {
@@ -28,8 +29,9 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 89.5vh;
+    height: 75vh;
     padding: 0 0 3.5rem 0;
+    transition: all .5s ease-in-out;
 
     .arrow-down {
         display: flex;
@@ -92,6 +94,7 @@ main {
                 }
             }
         }
+
         .header-card-item-bottom-border {
             border-bottom: 2px solid #d1d1d1;
             width: 100%;
@@ -108,9 +111,14 @@ main {
                 color: #e66666f5;
             }
 
+            #populatie-aantal {
+                margin-bottom: .4rem;
+            }
+
             h3 {
                 font-weight: normal;
             }
+
             div {
                 border: 2px solid #3d3d3d3d;
                 font-weight: bold;
@@ -122,6 +130,98 @@ main {
             }
         }
     }
+}
+
+#map-section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+
+    .waar-map-container {
+        width: 100%;
+        padding: 1rem 4rem 4rem 4rem;
+
+        #map-container {
+            height: 25rem;
+
+            iframe {
+                border-radius: 1rem;
+                margin-top: 1rem;
+                height: 100%;
+                width: 100%;
+                filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.082));
+            }
+        }
+
+        .map-hidden {
+            display: none;
+        }
+
+        h3 {
+            font-weight: bold;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+
+        hr {
+            border-color: rgba(134, 134, 134, 0.123)
+        }
+
+        .centrum-info-containers {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .waar-plaats-container,
+        .gsm-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            height: 4.5rem;
+
+            * {
+                color: var(--in-color);
+                font-size: 1.8rem;
+            }
+
+            i {
+                color: #EA4435;
+                margin-right: .5rem;
+            }
+
+            i {
+                background-color: #7487a1;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 37px;
+                margin: 10px 15px;
+                vertical-align: middle;
+                color: white;
+                font-size: 1.2rem;
+                padding-right: 1px;
+                padding-top: 0px;
+            }
+        }
+
+        .locatie-waar {
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    }
+}
+
+#scrol {
+    height: 5rem;
+    width: 100%;
 }
 
 .toegediende-section {
@@ -154,8 +254,7 @@ main {
         border-radius: 15px;
 
         &:hover {
-            cursor: help;
-            transform: scale(1.1);
+            transform: scale(1.04);
         }
 
         .toegediende-title {
@@ -173,11 +272,13 @@ main {
             align-items: center;
             flex-direction: column;
             padding: 0.8rem 0;
+
             h3 {
                 text-align: center;
                 font-size: 1.4rem;
                 margin: 0;
             }
+
             div {
                 text-align: center;
                 font-size: 1.2rem;
@@ -193,12 +294,7 @@ main {
 
 .voorkomen-section {
     width: 100%;
-
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--main-green);
 
     .voorkomen-container {
         display: flex;
@@ -221,7 +317,7 @@ main {
             flex-direction: column;
 
             .video-off {
-                filter: brightness(0.85);
+                filter: brightness(0.95);
             }
 
             video {
@@ -267,14 +363,14 @@ main {
         .voorkomen-info {
             width: 50%;
 
+            * {
+                color: white;
+            }
+
             .vlaamse-overheid-text {
                 text-decoration: underline;
                 font-style: italic;
-                color: var(--main-green);
-            }
-
-            .fa-check {
-                color: var(--main-green);
+                color: rgba(238, 245, 248, 0.966)
             }
         }
     }
@@ -282,45 +378,88 @@ main {
 
 .waar-gevaccineerd-section {
     width: 100%;
-    background-color: var(--main-green);
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    padding: 2rem 0;
     .waar-gevaccineerd-container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        h2{
+        padding: 5rem 0 2rem;
+
+        h2 {
             text-align: center;
             margin: 0;
             font-size: 2rem;
-            color: whitesmoke;
+            color: var(--main-color);
 
             margin-bottom: 2rem;
         }
 
-        button{
-            padding: 0 .4rem;
-            font-size: 1.2rem;
-            border-radius: .2rem;
-            transition: all .2s ease-in-out;
-            background-color: whitesmoke;
-            color: var(--main-green);
+    }
+}
+
+.zoek-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    padding-bottom: 3rem;
+
+    button {
+        font-size: 1.3rem;
+        border-radius: 0rem .5rem .5rem 0;
+        font-weight: 450;
+        padding: 0 1rem;
+        height: 2.5rem;
+        transition: all .2s ease-in-out;
+        background-color: var(--main-green);
+        color: white;
+        border: none;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #708b6f;
+        }
+
+        &:active,
+        &:focus {
             border: none;
             outline: none;
-
-            &:hover{
-                cursor: pointer;
-
-                transform: scale(1.05);
-            }
-
-            &:active, &:focus{
-                border: none;
-                outline: none;
-            }
         }
+    }
+
+    input[type="text"] {
+        height: 2.5rem;
+        width: 30rem;
+        font-size: 1.3rem;
+        padding: 0 0 0 .5rem;
+        border-radius: 0.5rem 0 0 0.5rem;
+        border: 1.8px solid #00000033;
+        border-right: none;
+        outline: none;
+        box-shadow: 0 0px 0px 1px #9191910d, 0 0px 3px 4px #8686860a inset;
+    }
+}
+
+input[type="submit"] {
+    display: none;
+}
+
+.waar-zoeken-container {
+    padding-bottom: 4rem;
+    transform: scale(1.1);
+
+    h3 {
+        text-align: center;
+        font-size: 3rem;
     }
 }
 
@@ -331,7 +470,7 @@ main {
 }
 
 .background-filter {
-    background-color: #f5f5f5de;
+    background-color: #f5f5f5ce;
     width: 100%;
     height: 100%;
 }
@@ -429,18 +568,20 @@ nav {
     margin: 0px;
     padding: 0 22px;
     display: flex;
-    font-size: 0.8rem;
+    font-size: .9rem;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
-}
 
-#menu a:hover {
-    background-color: var(--main-green);
-    color: white;
-    box-shadow: 5px 10px 30px #35353508;
-    border-radius: 3px;
-    transition: all ease 0.1s;
+    &:hover {
+        box-shadow: 5px 10px 30px #35353508;
+        border-radius: 3px;
+        position: relative;
+        transition: all ease 0.1s;
+        text-decoration: underline;
+        text-underline-offset: .1rem;
+        text-decoration-color: var(--main-green);
+    }
 }
 
 .close {
@@ -458,6 +599,14 @@ nav {
 .open-hamurger {
     top: 3.4rem !important;
     z-index: -999 !important;
+}
+
+.current-page {
+    color: var(--main-green);
+
+    &:hover {
+        text-decoration: none !important;
+    }
 }
 
 .footer-container {
