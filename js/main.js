@@ -1,4 +1,4 @@
-AOS.init();
+// AOS.init();
 GetPrameters();
 
 const texts = ['Aalst  ', '', '', '', 'Gent  ', '', '', '', 'Oosterzele  ', '', '', '', 'Brussel  ', '', '', ''];
@@ -27,21 +27,42 @@ let population = [];
         })
 })();
 
-
 (function typefuntie() {
-    if (count === texts.length) {
-        count = 0
-    }
-    currentText = texts[count]
-    letter = currentText.slice(0, ++index)
     let input = document.getElementById('input-gemeente')
-    input.setAttribute("placeholder", letter);
-    if (letter.length === currentText.length) {
-        count++
-        index = 0
+    if (input !== null) {
+        if (count === texts.length) {
+            count = 0
+        }
+        currentText = texts[count]
+        letter = currentText.slice(0, ++index)
+        input.setAttribute("placeholder", letter);
+        if (letter.length === currentText.length) {
+            count++
+            index = 0
+        }
+        setTimeout(typefuntie, 300)
     }
-    setTimeout(typefuntie, 300)
 })();
+
+Array.from(document.getElementsByClassName('vraag-item')).forEach(function (element) {
+    element.addEventListener('click', () => {
+        if (!element.classList.contains('vraag-item-expanded')) {
+            Array.from(document.getElementsByClassName('vraag-item')).forEach(function (element) {
+                element.classList.remove('vraag-item-expanded');
+                element.children[0].children[2].classList.remove('fa-times');
+                element.children[1].style.maxHeight = "0px"
+            })
+        }
+        element.classList.toggle('vraag-item-expanded');
+        element.children[0].children[2].classList.toggle('fa-times');
+        if (element.children[1].style.maxHeight == 0 || element.children[1].style.maxHeight == '0px') {
+            element.children[1].style.maxHeight = element.children[1].scrollHeight + 200 + "px";
+
+        } else {
+            element.children[1].style.maxHeight = "0px"
+        }
+    });
+});
 
 document.getElementById("hamburger").addEventListener("click", () => {
     document.getElementById("menu").classList.toggle("open-hamurger");

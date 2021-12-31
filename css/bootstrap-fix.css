@@ -1,0 +1,167 @@
+a {
+  color: var(--main-color);
+}
+
+a:hover {
+  color: var(--main-color);
+}
+
+.banner {
+  background-image: url("../images/banner.jpeg");
+  background-size: cover;
+  -webkit-filter: drop-shadow(0px 0px 2px #3a3a3a24);
+          filter: drop-shadow(0px 0px 2px #3a3a3a24);
+  border-radius: 0.8rem !important;
+}
+
+.banner * {
+  color: white;
+  text-shadow: 1px 1px 2px #3a3a3a24;
+}
+
+.full-card {
+  height: 100%;
+  max-width: 25rem;
+  margin-bottom: 2rem !important;
+  margin: auto;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.full-card:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+.rounded,
+.card-img-top {
+  border-radius: 0.8rem !important;
+}
+
+.rounded div,
+.card-img-top div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.rounded div p,
+.card-img-top div p {
+  font-size: 1rem;
+}
+
+.rounded div p .type-vaccin,
+.card-img-top div p .type-vaccin {
+  font-size: 1rem;
+  font-weight: 300 !important;
+  margin-right: 0.4rem;
+}
+
+.rounded div p .goedgekeurd-vaccin,
+.card-img-top div p .goedgekeurd-vaccin {
+  color: var(--main-green);
+  padding-left: 0.5rem;
+}
+
+.rounded div p .nog-niet-goedgekeurd-vaccin,
+.card-img-top div p .nog-niet-goedgekeurd-vaccin {
+  color: var(--main-red-hover);
+  padding-left: 0.5rem;
+  vertical-align: sub;
+}
+
+.rounded div .text-muted,
+.card-img-top div .text-muted {
+  color: var(--main-green) !important;
+  font-weight: 500;
+}
+
+.rounded div hr,
+.card-img-top div hr {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.rounded button,
+.card-img-top button {
+  background-color: var(--main-green);
+  border-radius: 0.4rem !important;
+  font-weight: 500;
+  padding: 0.4rem !important;
+  width: 8rem;
+  border: none;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 1rem;
+}
+
+.rounded button:hover,
+.card-img-top button:hover {
+  background-color: rgba(86, 121, 87, 0.87);
+}
+
+.rounded button:active, .rounded button:focus, .rounded button:focus-within,
+.card-img-top button:active,
+.card-img-top button:focus,
+.card-img-top button:focus-within {
+  background-color: rgba(86, 121, 87, 0.87) !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.card-img-top {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  background-position: center;
+  background-size: cover;
+  height: 12rem;
+  -webkit-filter: saturate(0.8);
+          filter: saturate(0.8);
+}
+
+@media (max-width: 1200px) {
+  .vaccin-section h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 722px) {
+  .vaccin-section h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 630px) {
+  .vaccin-section h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .vaccin-section h3 {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .vaccin-section h2 {
+    font-size: 2rem;
+  }
+}
+/*# sourceMappingURL=bootstrap-fix.css.map */
