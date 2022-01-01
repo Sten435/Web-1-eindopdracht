@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
-<body>
+<body onload="typeWriter();">
     <header>
         <nav>
             <a href="./">
                 <img src="./images/Logo.png" class="logo" alt="Logo">
             </a>
-            <i id="hamburger" class="fas fa-bars "></i>
+            <i id="hamburger" class="fas fa-bars"></i>
             <ul id="menu">
                 <li><a href="#" class="current-page">Home</a></li>
                 <li><a href="./waar-vaccineren.html">Waar Vaccineren</a></li>
@@ -35,13 +35,14 @@
             <div class="clipper"></div>
             <section class="main-homepage">
                 <div class="main-container">
-                    <h1>Welkom.</h1>
-                    <h2>Hou jezef & Andere Veilig</h2>
-                    <p>Wil je meer te weten komen over het corona-virus,</p>
-                    <button class="main-button"><a href="#toegediend">Klik Hier</a></button>
+                    <h1 id="anim">Welkom,</h1>
+                    <!-- <h1 id="anim">Welkom<span>,</span></h1> -->
+                    <h2>Hou jezef <span>&</span> Andere Veilig</h2>
+                    <p>Wil je meer te weten komen <a href="https://nl.wikipedia.org/wiki/COVID-19">covid-19</a> vaccin's ?</p>
+                    <button class="main-button"><a href="./vaccins.html">Meer Info</a></button>
                 </div>
                 <div class="img-container">
-                    <img src="../images/woamn.png" class="image-guy" alt="">
+                    <img src="./images/svg/undraw_social_distancing_2g0u.svg" class="image-guy" alt="">
                 </div>
             </section>
             <div id="toegediend"></div>
@@ -223,7 +224,26 @@
             </div>
         </div>
     </footer>
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <script>
+        var i = 0;
+        var txt = 'Welkom';
+        var speed = 120;
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function typeWriter() {
+            document.getElementById("anim").innerHTML = ''
+            for (let i = 0; i < 6; i++) {
+                document.getElementById("anim").innerHTML += txt.charAt(i);
+                await sleep(speed);
+            }
+            await sleep(speed);
+            document.getElementById("anim").innerHTML += '<span>,</span>'
+        }
+
+    </script>
     <script src="./js/main.js"></script>
 </body>
 

@@ -40,23 +40,51 @@ main {
     min-width: 28rem;
     width: 30rem;
     padding: 0 2rem;
+    margin-bottom: 4rem;
+    margin-left: 2rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 0;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1rem;
+
+      span {
+        font-size: 2.5rem;
+        color: #6d8a6d;
+      }
     }
 
     h2,
     h3 {
       margin: 0;
+
+      span {
+        color: #6d8a6d;
+      }
     }
 
     p {
       font-size: 1.02rem;
+
+      a {
+        background-color: #769475;
+        border-radius: .2rem;
+        font-weight: bolder;
+        color: white;
+        padding: 0 .25rem;
+        border: 1px solid transparent;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          background-color: white;
+          border: 1px solid var(--main-green);
+          color: var(--main-green);
+          cursor: pointer;
+        }
+      }
     }
 
     .main-button {
@@ -67,6 +95,7 @@ main {
       border-radius: .5rem;
       margin-top: .4rem;
       font-size: 1.5rem;
+      font-weight: bolder;
       border: none;
       outline: none;
       background-color: white;
@@ -76,16 +105,17 @@ main {
       }
 
       border: 2px solid var(--main-green);
+      border-radius: .15rem;
       transition: all .1s ease-in-out;
 
       &:hover {
         background-color: var(--main-green);
+        border-radius: .4rem;
 
         a {
           color: white;
         }
 
-        border: 2px solid white;
         cursor: pointer;
       }
     }
