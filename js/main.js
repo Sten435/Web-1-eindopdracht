@@ -1,4 +1,3 @@
-// AOS.init();
 GetPrameters();
 
 const texts = ['Aalst  ', '', '', '', 'Gent  ', '', '', '', 'Oosterzele  ', '', '', '', 'Brussel  ', '', '', ''];
@@ -10,6 +9,10 @@ let letter = '';
 sessionStorage.setItem('prev-item', 'Oost-Vlaanderen')
 let besmettingen = [];
 let population = [];
+
+function DownArrow(){
+    window.scrollTo(0, document.getElementById('toegediend').getBoundingClientRect().y)
+}
 
 (function initialfuntie() {
     fetch('../data/besmettingen.json')

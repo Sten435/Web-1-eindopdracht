@@ -1,0 +1,380 @@
+@media (max-width: 1220px) {
+  .main-homepage {
+    height: auto;
+  }
+
+  .arrow-down {
+    display: none;
+  }
+
+  .main-container {
+    margin: auto !important;
+    min-width: fit-content !important;
+    padding: 0 !important;
+    padding-bottom: 4rem;
+    padding-left: 1rem !important;
+  }
+
+  form {
+    padding: 0 1rem !important;
+    input {
+      min-width: 0 !important;
+    }
+  }
+
+  .img-container {
+    width: 45% !important;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  .voorkomen-section {
+    order: 2;
+    .voorkomen-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column !important;
+
+      .voorkomen-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+
+        margin-top: 1.5rem;
+
+        h2 {
+          font-size: 2rem;
+          padding-bottom: 1rem;
+        }
+
+        p {
+          display: none;
+        }
+      }
+
+      .video-container {
+        width: 80%;
+      }
+    }
+  }
+
+  .waar-gevaccineerd-section {
+    order: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .img-container {
+    display: none !important;
+  }
+
+  .img-container-small {
+    display: flex !important;
+  }
+
+  .vraag-item {
+    max-width: 75% !important;
+  }
+}
+
+@media (max-width: 961px) {
+  .main-container {
+    width: fit-content !important;
+  }
+  .toegediende-container {
+    display: grid !important;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    .toegediende-flex-row {
+      display: grid !important;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .home-header-section {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    h1 {
+      font-size: 4rem !important;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .vraag-item {
+    max-width: 85% !important;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-container .footer-left,
+  .footer-container .footer-center {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-container .footer-center i {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 840px) {
+  .contact-container {
+    .l-r-box-container {
+      flex-wrap: wrap;
+
+      .linkse-box,
+      .rechtse-box {
+        width: 80%;
+      }
+    }
+  }
+
+  .subsectie {
+    flex-direction: column !important;
+
+    .sub-email,
+    .sub-select {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  #hamburger {
+    display: block;
+  }
+
+  #menu {
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    background: #f7f7f7;
+    top: -179px;
+    z-index: -5;
+    margin: 0;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.171);
+    box-shadow: 0 2px 18px -3px #56565685;
+  }
+
+  #menu a {
+    margin: 0.2rem 1rem;
+  }
+
+  .close {
+    display: initial;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.9rem;
+    color: #76716a;
+  }
+
+  .main-container {
+    padding: 0 !important;
+    width: 38% !important;
+
+    h1 {
+      font-size: 3rem !important;
+    }
+
+    h2 {
+      font-size: 1.2rem !important;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .vraag-item {
+    max-width: 95% !important;
+    border-radius: 4px !important;
+  }
+}
+
+@media (max-width: 630px) {
+  .main-homepage {
+    flex-direction: column;
+    height: calc(100vh - 120px) !important;
+    justify-content: flex-start;
+    padding-top: 4rem;
+  }
+
+  .arrow-down {
+    display: flex;
+  }
+
+  .img-container-small {
+    display: none !important;
+  }
+
+  .main-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+  }
+
+  .main-container {
+    h1 {
+      font-size: 3.5rem !important;
+    }
+    h2 {
+      font-size: 1.4rem !important;
+    }
+
+    p,
+    button {
+      display: none;
+    }
+  }
+
+  .img-container-mobile {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    padding: 0;
+    margin-bottom: 2rem;
+
+    img {
+      width: 85% !important;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .vraag-text-container {
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .voorkomen-info {
+    h2 {
+      font-size: 1.4rem !important;
+      padding-bottom: 1rem;
+    }
+    ul {
+      li {
+        font-size: 0.9rem !important;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+
+  .waar-zoeken-container {
+    h3 {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .waar-gevaccineerd-container {
+    h2 {
+      font-size: 1.7rem !important;
+    }
+  }
+
+  .toegediende-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+@media (max-width: 440px) {
+  .waar-zoeken-container {
+    h3 {
+      font-size: 1.9rem !important;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .vraag-text-container {
+    h2 {
+      font-size: 1.6rem !important;
+    }
+  }
+
+  .waar-zoeken-container {
+    h3 {
+      font-size: 2rem !important;
+    }
+  }
+
+  .waar-gevaccineerd-container,
+  .toegediende-section {
+    h2 {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .contact-text-container {
+    h2 {
+      font-size: 1.7rem;
+    }
+  }
+
+  .footer-links {
+    display: none;
+  }
+
+  .logo_footer {
+    margin-bottom: 1rem;
+  }
+
+  .fa-map-marker,
+  .fa-phone,
+  .fa-envelope {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .voorkomen-info {
+    h2 {
+      font-size: 1rem !important;
+    }
+    ul {
+      li {
+        font-size: 0.6rem !important;
+      }
+    }
+  }
+
+  .waar-zoeken-container {
+    h3 {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .waar-zoeken-container {
+    h3 {
+      font-size: 1.4rem !important;
+    }
+  }
+}
