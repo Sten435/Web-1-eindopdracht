@@ -12,9 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/media-queries.css" />
+    <link rel="stylesheet" href="./css/locomotive-scrol.css" />
   </head>
 
-  <body class="waar-body">
+  <body class="waar-body" data-scroll data-scroll-container>
     <header>
       <nav>
         <a href="./">
@@ -30,7 +31,7 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main data-scroll data-scroll-section>
       <div class="background-filter">
         <div class="clipper"></div>
         <section class="header-section header-section-vraag">
@@ -40,30 +41,41 @@
           <div class="contact-container">
             <form action="https://www.w3schools.com/action_page.php">
               <div class="l-r-box-container">
-                <div class="linkse-box">
-                  <label for="name">Naam <span class="required">*</span></label>
-                  <input type="text" name="name" id="name" required />
-                  <label for="voor-name">Voor Naam <span class="required">*</span></label>
-                  <input type="text" name="voor-name" id="voor-name" required />
-                  <label for="telefoon">Telefoon</label>
-                  <input type="tel" name="telefoon" id="telefoon" />
-                </div>
-                <div class="rechtse-box">
-                  <div class="subsectie">
-                    <div class="sub-email">
-                      <label for="email">Email <span class="required">*</span></label>
-                      <input type="email" name="email" id="email" required />
+                <div class="box-container">
+                  <div class="linkse-box">
+                    <label for="name">Naam <span class="required">*</span></label>
+                    <input type="text" name="name" id="name" required />
+                    <label for="voor-name">Voor Naam <span class="required">*</span></label>
+                    <input type="text" name="voor-name" id="voor-name" required />
+                    <label for="telefoon">Telefoon</label>
+                    <input type="tel" name="telefoon" id="telefoon" />
+                  </div>
+                  <div class="rechtse-box">
+                    <div class="subsectie">
+                      <div class="sub-email">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" name="email" id="email" required />
+                      </div>
+                      <div class="sub-select">
+                        <label for="subject">Subject</label>
+                        <select name="subject" id="subject">
+                          <option value="disabled" disabled selected>Kies een Subject</option>
+                          <option value="Vaccins">Vaccins</option>
+                          <option value="Centra">Centra</option>
+                          <option value="Andere">Andere</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="sub-select">
-                      <label for="subject">Subject <span class="required">*</span></label>
-                      <select name="subject" id="subject">
-                        <option value="disabled" disabled selected>Kies een Subject</option>
-                        <option value="Vaccins">Vaccins</option>
-                        <option value="Centra">Centra</option>
-                        <option value="Andere">Andere</option>
-                      </select>
+                    <label>Geslacht</label>
+                    <div class="radio-container">
+                      <input type="radio" name="gender" id="gender-m" />
+                      <label for="gender-m">Man</label>
+                      <input type="radio" name="gender" id="gender-f" />
+                      <label for="gender-f">Vrouw</label>
                     </div>
                   </div>
+                </div>
+                <div class="subject-container">
                   <label for="bijschr">Beschrijving</label>
                   <textarea name="bijschr" id="bijschr"></textarea>
                 </div>
@@ -76,7 +88,7 @@
         </section>
       </div>
     </main>
-    <footer>
+    <footer data-scroll data-scroll-section>
       <div class="footer-container">
         <div class="footer-left">
           <a href="./" class="logo logo_footer">
@@ -112,6 +124,7 @@
         </div>
       </div>
     </footer>
+    <script src="./js/locomotive-scroll.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

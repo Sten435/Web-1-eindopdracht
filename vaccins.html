@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/media-queries.css" />
     <link rel="stylesheet" href="./css/bootstrap-fix.css" />
+    <link rel="stylesheet" href="./css/locomotive-scrol.css" />
   </head>
 
-  <body class="waar-body">
+  <body class="waar-body" data-scroll data-scroll-container>
     <header>
       <nav>
         <a href="./">
@@ -42,7 +43,7 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main data-scroll data-scroll-section>
       <div class="background-filter">
         <div class="clipper"></div>
         <section class="header-section vaccin-section">
@@ -190,7 +191,7 @@
         </section>
       </div>
     </main>
-    <footer>
+    <footer data-scroll data-scroll-section>
       <div class="footer-container">
         <div class="footer-left">
           <a href="./" class="logo logo_footer">
@@ -225,7 +226,7 @@
         </div>
       </div>
     </footer>
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <script src="./js/locomotive-scroll.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

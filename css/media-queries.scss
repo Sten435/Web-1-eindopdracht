@@ -26,6 +26,11 @@
     width: 45% !important;
     padding-right: 1rem;
   }
+
+  #locatie-waar,
+  #gsm-waar {
+    font-size: clamp(1.1rem, 3vw, 28px) !important;
+  }
 }
 
 @media (max-width: 1150px) {
@@ -135,17 +140,16 @@
   .footer-container .footer-center i {
     margin-left: 0;
   }
+
+  .centrum-info-containers {
+    flex-direction: column !important;
+  }
 }
 
 @media (max-width: 840px) {
   .contact-container {
     .l-r-box-container {
       flex-wrap: wrap;
-
-      .linkse-box,
-      .rechtse-box {
-        width: 80%;
-      }
     }
   }
 
@@ -212,6 +216,14 @@
   }
 }
 
+@media (max-width: 689px) {
+  .waar-map-container {
+    h3 {
+      font-size: clamp(1rem, 4vw, 3rem) !important;
+    }
+  }
+}
+
 @media (max-width: 630px) {
   .main-homepage {
     flex-direction: column;
@@ -261,6 +273,14 @@
       width: 85% !important;
     }
   }
+
+  .waar-map-container {
+    padding: 0 1rem !important;
+  }
+
+  #map {
+    border-radius: 0 !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -268,6 +288,22 @@
     h3 {
       font-size: 1rem;
     }
+  }
+
+  .box-container {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .rechtse-box,
+  .linkse-box {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .subject-container {
+    padding: 0 !important;
   }
 }
 
@@ -350,6 +386,10 @@
   .fa-envelope {
     display: none;
   }
+
+  .waar-map-container {
+    padding: 0 !important;
+  }
 }
 
 @media (max-width: 400px) {
@@ -376,5 +416,42 @@
     h3 {
       font-size: 1.4rem !important;
     }
+  }
+}
+
+//----------------------------------------------
+
+@media (max-height: 690px) {
+  .arrow-down {
+    display: none;
+  }
+}
+
+@media (max-height: 645px) {
+  .main-homepage {
+    padding-top: 1rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .img-container-mobile {
+    width: 70% !important;
+  }
+}
+
+@media (max-height: 506px) {
+  .img-container-mobile {
+    width: 50% !important;
+  }
+}
+
+@media (max-height: 443px) {
+  .img-container-mobile {
+    display: none !important;
+  }
+
+  .main-homepage {
+    padding-top: 0 !important;
+    justify-content: center !important;
   }
 }
