@@ -1,3 +1,10 @@
+if (document.getElementById("main-image") != null) {
+  var textArray = ["guy.png", "img-container-small.png", "svg/undraw_medical_research_qg4d.svg", "svg/undraw_social_distancing_2g0u.svg"];
+  var randomNumber = Math.floor(Math.random() * textArray.length);
+
+  document.getElementById("main-image").setAttribute("src", "./images/" + textArray[randomNumber]);
+}
+
 GetPrameters();
 const texts = ["Aalst  ", "", "", "", "Gent  ", "", "", "", "Oosterzele  ", "", "", "", "Brussel  ", "", "", ""];
 let count = 0;
