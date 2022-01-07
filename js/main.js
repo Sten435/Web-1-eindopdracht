@@ -176,6 +176,7 @@ function PlaatsMap() {
     GetStations(Inputveld.value);
   } else {
     Inputveld.style.borderColor = "#eb4535";
+    scroll.update();
   }
 }
 async function GetStations(response) {
@@ -185,6 +186,7 @@ async function GetStations(response) {
   let RAW_INPUT_POSTCODE_hoofdgemeente = [];
 
   if (response == "" || response == " " || response == undefined || response == null) {
+    scroll.update();
     return;
   }
 
@@ -210,8 +212,10 @@ async function GetStations(response) {
         if (GemeenteLijst.includes(RAW_INPUT_POSTCODE_hoofdgemeente[0].naam_hoofdgemeente)) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
+          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
+          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -222,8 +226,10 @@ async function GetStations(response) {
         if (GemeenteLijst.includes(RESULT[0].Postcode.naam_hoofdgemeente)) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
+          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
+          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -233,9 +239,11 @@ async function GetStations(response) {
         if (plaats_arr[index].Gemeente.toLowerCase() == response.toLowerCase()) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
+          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
           //POSTCODE BESTAAT NIET
+          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -248,8 +256,10 @@ async function GetStations(response) {
         if (GemeenteLijst.includes(RESULT[0].Postcode.naam_hoofdgemeente)) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
+          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
+          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -259,8 +269,10 @@ async function GetStations(response) {
         if (plaats_arr[index].Gemeente.toLowerCase() == response.toLowerCase()) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
+          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
+          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
