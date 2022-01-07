@@ -54,7 +54,7 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 main {
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -693,7 +693,7 @@ main {
 
 .waar-gevaccineerd-section {
   width: 100%;
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
