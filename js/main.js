@@ -18,15 +18,21 @@ let population = [];
 
 var scroll;
 
+let plaats_arr = [];
+let plaatsName_arr = [];
+
+let Inputveld = document.getElementById("input-gemeente");
+
 (function () {
   scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
-    smoothMobile: true,
-    multiplier: 0.9,
+    smoothMobile: false,
+    multiplier: 0.8,
   });
 
-  fetch("../data/besmettingen.json")
+  if ( document.URL.includes("waar-vaccineren.html") ) {
+    fetch("../data/besmettingen.json")
     .then((data) => data.json())
     .then((data) => {
       besmettingen.push(Object.keys(data[0]).map((key) => [String(key), data[0][key]]));
@@ -39,6 +45,19 @@ var scroll;
       population.push(Object.keys(data[0]).map((key) => [String(key), data[0][key]]));
       population = population[0];
     });
+
+    fetch("../data/gemeentes.json")
+  .then((data) => data.json())
+  .then((data) => {
+    for (let index = 0; index < data.length; index++) {
+      let plaats = new GemeenteData(data[index][3], data[index][1], data[index][7], data[index][8]);
+      plaats_arr.push(plaats);
+    }
+    for (let index = 0; index < data.length; index++) {
+      plaatsName_arr.push(data[index][1]);
+    }
+  });
+}
 })();
 
 var i = 0;
@@ -153,23 +172,6 @@ let GemeenteData = class {
 function TypeInput(e) {
   if (e.style.borderColor == "rgb(235, 69, 53)") e.style.borderColor = "#00000033";
 }
-
-let plaats_arr = [];
-let plaatsName_arr = [];
-
-let Inputveld = document.getElementById("input-gemeente");
-
-fetch("../data/gemeentes.json")
-  .then((data) => data.json())
-  .then((data) => {
-    for (let index = 0; index < data.length; index++) {
-      let plaats = new GemeenteData(data[index][3], data[index][1], data[index][7], data[index][8]);
-      plaats_arr.push(plaats);
-    }
-    for (let index = 0; index < data.length; index++) {
-      plaatsName_arr.push(data[index][1]);
-    }
-  });
 
 function PlaatsMap() {
   if (Inputveld.value !== null && Inputveld.value !== undefined && Inputveld.value.trim() !== "") {
@@ -324,4 +326,8 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     scroll.update();
   }, 0);
+
+  setInterval(() => {
+    scroll.update();
+  }, 500);
 });

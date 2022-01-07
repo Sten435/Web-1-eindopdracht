@@ -86,6 +86,7 @@ main {
     h3 {
       margin: 0;
       font-size: 1.6rem;
+
       span {
         color: #6d8a6d;
       }
@@ -542,6 +543,7 @@ main {
   padding-right: 0.5rem;
   transform: scaleX(-1);
 }
+
 .waar-gevaccineerd-section {
   width: 100%;
   background-image: url("../images/background.jpg");
@@ -949,7 +951,7 @@ input[type="submit"] {
   input[type="radio"] {
     width: 25px;
     height: 25px;
-    appearance: auto;
+    appearance: radio !important;
   }
 
   label {
