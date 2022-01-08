@@ -4,8 +4,6 @@ if (document.getElementById("main-image") != null) {
 
   document.getElementById("main-image").setAttribute("src", "./images/" + textArray[randomNumber]);
 }
-
-GetPrameters();
 const texts = ["Aalst  ", "", "", "", "Gent  ", "", "", "", "Oosterzele  ", "", "", "", "Brussel  ", "", "", ""];
 let count = 0;
 let index = 0;
@@ -24,14 +22,11 @@ let plaatsName_arr = [];
 let Inputveld = document.getElementById("input-gemeente");
 
 (function () {
-  scroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    smoothMobile: false,
-    multiplier: 0.8,
-  });
-
-  if ( document.URL.includes("waar-vaccineren.html") ) {
+  window.onload = function () {
+    window.scrollTo(0,0);
+    GetPrameters();
+  };
+  if (document.URL.includes("waar-vaccineren.html") ) {
     fetch("../data/besmettingen.json")
     .then((data) => data.json())
     .then((data) => {
@@ -62,7 +57,7 @@ let Inputveld = document.getElementById("input-gemeente");
 
 var i = 0;
 var txt = "Vaxcy,";
-var speed = 175;
+var speed = 120;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -77,9 +72,7 @@ async function typeWriter() {
 }
 
 function DownArrow() {
-  scroll.scrollTo(document.getElementById("toegediend").getBoundingClientRect().top, {
-    duration: 400,
-  });
+  window.scrollTo(0, document.getElementById("toegediend").getBoundingClientRect().top)
 }
 
 (function typefuntie() {
@@ -145,19 +138,28 @@ function HoverProvintie(provintie) {
   }
 }
 
-function PlayVideo() {
+async function PlayVideo() {
   let vid = document.getElementById("vid");
-  if (vid.classList.contains("video-off")) {
+
+  if(vid.src == ''){
+    vid.crossOrigin = 'anonymous';
+    vid.src = './video/vid.mp4';
+    vid.play();
     vid.classList.remove("video-off");
     document.getElementById("play-btn").style.display = "none";
-    vid.play();
-  } else {
-    if (vid.paused) {
+  }else{
+    if (vid.classList.contains("video-off")) {
+      vid.classList.remove("video-off");
+      document.getElementById("play-btn").style.display = "none";
       vid.play();
     } else {
-      vid.pause();
-      document.getElementById("play-btn").style.display = "flex";
-      vid.classList.add("video-off");
+      if (vid.paused) {
+        vid.play();
+      } else {
+        vid.pause();
+        document.getElementById("play-btn").style.display = "flex";
+        vid.classList.add("video-off");
+      }
     }
   }
 }
@@ -178,7 +180,6 @@ function PlaatsMap() {
     GetStations(Inputveld.value);
   } else {
     Inputveld.style.borderColor = "#eb4535";
-    scroll.update();
   }
 }
 async function GetStations(response) {
@@ -188,7 +189,6 @@ async function GetStations(response) {
   let RAW_INPUT_POSTCODE_hoofdgemeente = [];
 
   if (response == "" || response == " " || response == undefined || response == null) {
-    scroll.update();
     return;
   }
 
@@ -214,10 +214,8 @@ async function GetStations(response) {
         if (GemeenteLijst.includes(RAW_INPUT_POSTCODE_hoofdgemeente[0].naam_hoofdgemeente)) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
-          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
-          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -228,10 +226,8 @@ async function GetStations(response) {
         if (GemeenteLijst.includes(RESULT[0].Postcode.naam_hoofdgemeente)) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
-          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
-          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -241,11 +237,9 @@ async function GetStations(response) {
         if (plaats_arr[index].Gemeente.toLowerCase() == response.toLowerCase()) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
-          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
           //POSTCODE BESTAAT NIET
-          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -258,10 +252,8 @@ async function GetStations(response) {
         if (GemeenteLijst.includes(RESULT[0].Postcode.naam_hoofdgemeente)) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
-          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
-          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -271,10 +263,8 @@ async function GetStations(response) {
         if (plaats_arr[index].Gemeente.toLowerCase() == response.toLowerCase()) {
           document.getElementById("input-gemeente").style.borderColor = "#00000033";
           Inputveld.value = "";
-          scroll.update();
           return DisplayData(plaats_arr[index]);
         } else {
-          scroll.update();
           Inputveld.style.borderColor = "#eb4535";
           ResetInput();
         }
@@ -283,7 +273,7 @@ async function GetStations(response) {
   }
 }
 
-function ResetInput() {
+function ResetInput (){
   document.getElementById("locatie-waar").innerHTML = "";
   document.getElementById("map-container").classList.add("map-hidden");
   document.getElementById("map-section").style.display = "none";
@@ -305,8 +295,7 @@ function DisplayData(plaats) {
   document.getElementById("locatie-waar").innerText = `${plaats.Adres.trimEnd()}, ${plaats.Gemeente}`;
   document.getElementById("gsm-waar").innerText = `${plaats.Gsm}`;
   document.getElementById("map-section").style.display = "flex";
-  scroll.update();
-  scroll.scrollTo(document.getElementById("map-section"));
+  window.scrollTo(0, 580);
 }
 
 function GetPrameters() {
@@ -321,13 +310,3 @@ function GetPrameters() {
     GetStations(gemeente);
   }
 }
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    scroll.update();
-  }, 0);
-
-  setInterval(() => {
-    scroll.update();
-  }, 500);
-});
