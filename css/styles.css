@@ -9,17 +9,14 @@
 
 body {
   margin: 0;
-  padding: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
 * {
+  scroll-behavior: smooth;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: var(--main-color);
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
 }
 
 *::-moz-selection {
@@ -54,7 +51,7 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 main {
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -693,7 +690,7 @@ main {
 
 .waar-gevaccineerd-section {
   width: 100%;
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1230,9 +1227,9 @@ input[type="submit"] {
 .radio-container input[type="radio"] {
   width: 25px;
   height: 25px;
-  -webkit-appearance: auto;
-     -moz-appearance: auto;
-          appearance: auto;
+  -webkit-appearance: radio !important;
+     -moz-appearance: radio !important;
+          appearance: radio !important;
 }
 
 .radio-container label {

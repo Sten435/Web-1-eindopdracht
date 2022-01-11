@@ -9,16 +9,13 @@
 
 body {
   margin: 0;
-  padding: 0;
-
-  transition: all 0.2s ease-in-out;
 }
 
 * {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   color: var(--main-color);
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
 
   &::selection {
     color: white;
@@ -46,7 +43,7 @@ body::-webkit-scrollbar-thumb,
 }
 
 main {
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -86,6 +83,7 @@ main {
     h3 {
       margin: 0;
       font-size: 1.6rem;
+
       span {
         color: #6d8a6d;
       }
@@ -542,9 +540,10 @@ main {
   padding-right: 0.5rem;
   transform: scaleX(-1);
 }
+
 .waar-gevaccineerd-section {
   width: 100%;
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -949,7 +948,7 @@ input[type="submit"] {
   input[type="radio"] {
     width: 25px;
     height: 25px;
-    appearance: auto;
+    appearance: radio !important;
   }
 
   label {
