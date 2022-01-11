@@ -421,6 +421,10 @@
   .arrow-down {
     display: none;
   }
+
+  .belgie_svg {
+    transform: scale(1) !important;
+  }
 }
 
 @media (max-height: 645px) {
@@ -432,6 +436,12 @@
 @media (max-height: 600px) {
   .img-container-mobile {
     width: 70% !important;
+  }
+}
+
+@media (max-height: 583px) {
+  .home-header-section {
+    display: none;
   }
 }
 
