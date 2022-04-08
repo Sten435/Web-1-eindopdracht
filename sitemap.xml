@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://stan-persoons.be/</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://stan-persoons.be/waar-vaccineren.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://stan-persoons.be/vragen.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://stan-persoons.be/contact.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://stan-persoons.be/vaccins.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+</urlset>
