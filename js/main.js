@@ -1,3 +1,5 @@
+alert('𝗗𝗶𝘁 𝗶𝘀 𝗲𝗲𝗻 𝘄𝗲𝗯𝘀𝗶𝘁𝗲 𝗴𝗲𝗺𝗮𝗮𝗸𝘁 𝗱𝗼𝗼𝗿 𝗦𝘁𝗮𝗻 𝗣𝗲𝗿𝘀𝗼𝗼𝗻𝘀.\n 𝘼𝙡𝙨 𝙚𝙞𝙣𝙙𝙤𝙥𝙙𝙧𝙖𝙘𝙝𝙩 𝙫𝙤𝙤𝙧 𝙝𝙚𝙩 𝙫𝙖𝙠 𝙒𝙚𝙗-1 𝙩𝙚 𝙃𝙤𝙂𝙚𝙣𝙩.\n\n 𝘼𝙡𝙡𝙚 𝙞𝙣𝙛𝙤𝙢𝙖𝙩𝙞𝙚 𝙝𝙞𝙚𝙧 𝙗𝙚𝙨𝙘𝙝𝙧𝙚𝙫𝙚𝙣 𝙞𝙨 𝙫𝙤𝙡𝙡𝙚𝙙𝙞𝙜 𝙛𝙞𝙘𝙩𝙞𝙚𝙛.');
+
 if (document.getElementById("main-image") != null) {
   var textArray = ["guy.png", "img-container-small.png", "svg/undraw_medical_research_qg4d.svg", "svg/undraw_social_distancing_2g0u.svg"];
   var randomNumber = Math.floor(Math.random() * textArray.length);
